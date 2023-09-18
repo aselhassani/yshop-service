@@ -1,6 +1,6 @@
 package com.yoozlab.yshop.test;
 
-import com.yoozlab.yshop.domain.Product;
+import com.yoozlab.yshop.domain.model.Product;
 
 import java.util.Random;
 

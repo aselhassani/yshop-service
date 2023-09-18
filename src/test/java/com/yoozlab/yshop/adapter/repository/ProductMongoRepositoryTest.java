@@ -78,13 +78,14 @@ public class ProductMongoRepositoryTest {
 
         assertThat(iDocument)
                 .usingRecursiveComparison()
+                .ignoringFields("updatedAt")
                 .isEqualTo(product);
 
         assertThat(result).isPresent()
                 .get()
                 .usingRecursiveComparison()
+                .ignoringFields("updatedAt")
                 .isEqualTo(oDocument);
-
     }
 
 }

@@ -1,4 +1,4 @@
-package com.yoozlab.yshop.domain;
+package com.yoozlab.yshop.domain.model;
 
 import lombok.Builder;
 

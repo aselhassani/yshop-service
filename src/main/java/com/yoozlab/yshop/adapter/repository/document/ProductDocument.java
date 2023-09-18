@@ -1,10 +1,13 @@
 package com.yoozlab.yshop.adapter.repository.document;
 
 
-import com.yoozlab.yshop.domain.Product;
+import com.yoozlab.yshop.domain.model.Product;
 import lombok.Builder;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.Instant;
 
 @Builder
 @Document
@@ -16,7 +19,10 @@ public record ProductDocument(
         String productName,
         String productDescription,
         Double price,
-        Boolean onSale
+        Boolean onSale,
+
+        @LastModifiedDate
+        Instant updatedAt
 ) {
 
         public static ProductDocument fromDomain(Product domain) {
