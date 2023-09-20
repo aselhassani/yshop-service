@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 @Getter
 public enum ErrorCode {
-  VALIDATION_ERROR(HttpStatus.BAD_REQUEST, "400-01", "Validation Error");
+  VALIDATION_ERROR(HttpStatus.BAD_REQUEST, "400-01", "Validation error");
 
   private final HttpStatus httpStatus;
   private final String code;
