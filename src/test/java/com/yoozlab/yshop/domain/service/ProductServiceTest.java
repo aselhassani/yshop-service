@@ -8,6 +8,7 @@ import static org.mockito.Mockito.when;
 import com.yoozlab.yshop.adapter.repository.ProductMongoRepository;
 import com.yoozlab.yshop.domain.model.Product;
 import com.yoozlab.yshop.test.DomainHelper;
+import com.yoozlab.yshop.test.TestHelper;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +30,7 @@ class ProductServiceTest {
 
   @BeforeEach
   void setup() {
-    product = DomainHelper.randomProduct();
+    product = DomainHelper.randomProduct(TestHelper.getRandomId("suppl"));
   }
 
   @Test

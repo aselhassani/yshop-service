@@ -28,7 +28,7 @@ services:
     image: mongo:5.0.6
     container_name: yshop.mongo
     ports:
-      - "27018:27017"
+      - "27017:27017"
     environment:
       MONGO_INITDB_DATABASE: yshop-service
       MONGO_INITDB_ROOT_USERNAME: localUser

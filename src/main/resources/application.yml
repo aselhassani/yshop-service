@@ -1,6 +1,30 @@
-
 spring:
   application:
     name: "@project.name@"
     version: "@project.version@"
     description: "@project.description@"
+  data:
+    mongodb:
+      authentication-database: ${MONGO_NAME:yshop-service}
+      host: ${MONGO_HOST:localhost}
+      port: ${MONGO_PORT:27017}
+      database: ${MONGO_NAME:yshop-service}
+      username: ${MONGO_USER:localUser}
+      password: ${MONGO_PASSWORD:localPwd}
+      ssl:
+        enabled: ${MONGO_SSL:false}
+  kafka:
+    consumer.max-retries: 3
+    consumer.retry-interval-ms: 5000
+    producer.compression-type: gzip
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    topics:
+      sync-products:
+        consumer: command.product.sync
+        group-id: yshop-service
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /admin

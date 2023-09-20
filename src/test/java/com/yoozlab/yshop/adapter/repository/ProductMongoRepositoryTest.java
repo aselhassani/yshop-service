@@ -35,7 +35,7 @@ public class ProductMongoRepositoryTest {
   @Mock
   private MongoTemplate mongoTemplate;
   public static final String CATEGORY_ID_INDEX = "category_id_index";
-  private final String COLLECTION_NAME_PREFIX = "product_";
+  private final String COLLECTION_NAME_PREFIX = "products_";
   private String supplierId;
   private Product product;
   private ProductDocument productDocument;

@@ -10,6 +10,7 @@ import com.yoozlab.yshop.domain.model.Product;
 import com.yoozlab.yshop.domain.service.ProductService;
 import com.yoozlab.yshop.test.DTOHelper;
 import com.yoozlab.yshop.test.DomainHelper;
+import com.yoozlab.yshop.test.TestHelper;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,11 +30,13 @@ public class InventoryControllerV1Test {
     private ProductService productService;
     private ProductV1DTO productV1DTO;
     private Product product;
+    private String supplierId;
 
     @BeforeEach
     void setup() {
+        supplierId = TestHelper.getRandomId("suppl");
         productV1DTO = DTOHelper.randomProductV1DTO();
-        product = DomainHelper.randomProduct();
+        product = DomainHelper.randomProduct(supplierId);
     }
 
     @Test

@@ -2,6 +2,7 @@ package com.yoozlab.yshop.adapter.repository;
 
 import com.yoozlab.yshop.adapter.repository.document.ProductDocument;
 import com.yoozlab.yshop.domain.model.Product;
+import com.yoozlab.yshop.port.repository.ProductRepository;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @RequiredArgsConstructor
 @Log4j2
-public class ProductMongoRepository {
+public class ProductMongoRepository implements ProductRepository {
 
     private final MongoTemplate mongoTemplate;
 
@@ -48,7 +49,6 @@ public class ProductMongoRepository {
             .map(ProductDocument::fromDomain)
             .map(doc -> mongoTemplate.save(doc, collectionName))
             .map(ProductDocument::toDomain);
-
     }
 
 

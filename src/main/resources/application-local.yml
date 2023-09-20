@@ -1,7 +1,0 @@
-spring:
-  data:
-    mongodb: { MONGO_HOST:localhost }
-    port: { MONGO_PORT:27018 }
-    database: { MONGO_NAME:yshop-service }
-    username: { MONGO_USER:localUser }
-    password: { MONGO_PASSWORD:localPwd }
